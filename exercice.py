@@ -69,18 +69,18 @@ def use_continue() -> None:
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     acceptance = []
 
-    for i in range(len(groups)):
-        acceptance_count = 0
-        if 3 <= len(groups[i]) > 10:
-            acceptance_count += 1
+    for sub_group in groups:
+        if len(sub_group) > 10 or len(sub_group) <= 3:
+            acceptance.append(False)
+            continue
+        if 25 in sub_group:
+            acceptance.append(True)
+            continue
+        if (min(sub_group) < 18) or (50 in sub_group and max(sub_group) > 70):
+            acceptance.append(False)
+            continue
 
-        adults = 0
-        for j in groups[i]:
-            if groups[i][j] > 18:
-                adults += 1
-        if adults == len(groups[i]):
-            acceptance_count += 1
-
+        acceptance.append(True)
     return acceptance
 
 
