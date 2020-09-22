@@ -1,0 +1,35 @@
+test_absolute (__main__.TestExercice) ... FAIL
+test_factorial (__main__.TestExercice) ... ok
+test_prefixes (__main__.TestExercice) ... ok
+test_summation (__main__.TestExercice) ... ok
+test_verify_ages (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_verify_ages (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 72, in test_verify_ages
+    output = exercice.verify_ages(groups)
+  File "/home/runner/work/c04-ch5-exercices-leandregrimmel/c04-ch5-exercices-leandregrimmel/exercice.py", line 79, in verify_ages
+    if groups[i][j] > 18:
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_absolute (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 22, in test_absolute
+    'Mauvaise réponse'
+AssertionError: Lists differ: [None, 5] != [5, 5]
+
+First differing element 0:
+None
+5
+
+- [None, 5]
++ [5, 5] : Mauvaise réponse
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=1, errors=1)
